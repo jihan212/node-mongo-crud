@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Node Mongo</title>
+    <style>
+        #title{
+            margin:0 auto;
+            border-bottom: 1px solid lightblue;
+            text-align: center;
+        }
+        #form{
+            width:70%;
+            margin: 10px auto;
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="title" class="container">
+        <h1>Heyyy yeaahh !!!!</h1>
+        <h2>These information will go to mongo database</h2>
+    </div>
+    <div class="container">
+        <form action="/addProduct" method="post" id="form">
+            <h4>Product Information</h4>
+            <input class="form-control" type="text" name="name" id="" placeholder="Product Name">
+            <br>
+            <input class="form-control" type="text" name="price" id="" placeholder="Product Price">
+            <br>
+            <input class="form-control" type="text" name="quantity" id="" placeholder="Product Quantity">
+            <br>
+            <button type="submit" class="btn btn-outline-success">Add Product</button>
+        </form>
+    </div>
+<!-- Script -->
+    <script>
+        fetch('/products')
+        .then (res => res.json())
+        .then (products => {
+            console.log(products);
+        })
+    </script>
+</body>
+</html>
